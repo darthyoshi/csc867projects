@@ -1,8 +1,12 @@
-<h1>Project 2</h1>
-<ul>
-<li>I chose to use the bootstrap-sass gem for this project</li>
-<li>After adding the gem to the project Gemfile, I ran "bundle install" to import the gem.</li>
+<h1 class='muted'>Project 2</h1>
+
+<ul class='hero-unit'>
+    <li>I chose to use bootstrap-sass for this project</li>
+    <li>After adding 'gem "bootstrap-sass"' to the project Gemfile, I ran "bundle install" to import the gem.</li>
+    <li>After that, it was a simple matter of playing around with the CSS and HTML files.</li>
+    <li>The result, crude as it is, is rather obvious.</li>
 </ul>
+
 <script>
 $(document).ready(function(){
   $("#toggle").click(function(){
@@ -10,8 +14,10 @@ $(document).ready(function(){
   });
 });
 </script>
-<button id="toggle">CLick me!</button>
-<div id='msg' display='none'>JQuery works!</div>
+
+<button id="toggle">Click me!</button>
+<div id='msg' display='none'>Looky, JQuery works!</div>
+
 <script>
   $('#msg').hide();
 </script>
