@@ -12,12 +12,3 @@
  *= require_self
  *= require_tree .
  */
-
-html, body {
-    background: #eeeeee;
-}
-
-.table {
-    background: #cccccc;
-    color: #ff0000;
-}
