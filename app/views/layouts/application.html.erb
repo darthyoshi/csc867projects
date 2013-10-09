@@ -1,7 +1,20 @@
+<%
+title = ""
+
+PROJECTS.each do |project,details|
+  if details['url'] == request.fullpath && request.fullpath != "/"
+    title = details['description']
+  end
+end
+
+if request.fullpath == "/"
+  title = "Projects home page"
+end
+%>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projects</title>
+  <title><%= title %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
