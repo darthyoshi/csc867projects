@@ -1,4 +1,5 @@
 Project1::Application.routes.draw do
+  get "calender" => "calender#show"
   get "pages/project_2"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
