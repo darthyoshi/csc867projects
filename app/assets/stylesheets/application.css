@@ -18,5 +18,14 @@ html, body {
 }
 
 .navbar {
+    padding: 2em;
     background: #d07030;
+}
+
+.table, th {
+    text-align: center !important;
+}
+
+.table, td, th {
+    border: 1px solid black;
 }

@@ -1,17 +1,17 @@
 <div class='container hero-unit'>
 <h1>Calendar</h1>
 
-<table class='table'>
+<table class='table cal_table'>
     <thead>
         <tr>
-            <th>&laquo</th>
-            <th class='cur_month'></th>
-            <th>&raquo</th>
+            <th><a id='prev_year'>&le;</a></th>
+            <th><a id='prev_month'>&lt;</a></th>
+            <th class='cur_month' colspan='3'></th>
+            <th><a id='next_month'>&gt;</a></th>
+            <th><a id='next_year'>&ge;</a></th>
         </tr>
     </thead>
 
-    <tbody>
-        <tr class='week'></tr>
-    </tbody>
+    <tbody class='month'></tbody>
 </table>
 </div>
