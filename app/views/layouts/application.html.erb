@@ -1,5 +1,4 @@
-<%
-title = ""
+<% title = ""
 
 PROJECTS.each do |project,details|
   if details['url'] == request.fullpath && request.fullpath != "/"
@@ -9,8 +8,7 @@ end
 
 if request.fullpath == "/"
   title = "Projects home page"
-end
-%>
+end %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +18,13 @@ end
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class = 'container navbar'>
+<header class = 'page-header navbar'>
     <b>Kay Choi</b>
 </header>
-<%= yield %>
+
+<div class='container hero-unit'>
+    <%= yield %>
+</div>
 
 </body>
 </html>

@@ -14,12 +14,17 @@ months = [
 
 cur_month = (new Date()).getMonth();
 cur_year =  (new Date()).getFullYear();
-
-
+cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay();
 
 $(document).ready ->
     init()
 
 init = () ->
     $(".cur_month").text((new Date).getDate()+' '+months[cur_month]+' '+cur_year)
-    $(".month").append("<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>")
+    $(".month").append(gen_week())
+
+gen_week = () ->
+    result = "<tr>"
+    for i in [0..cur_first] by 1
+        result += "<td></td>"
+    result += "</tr>"
