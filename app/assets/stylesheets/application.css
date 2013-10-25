@@ -12,3 +12,11 @@
  *= require bootstrap
  *= require_tree .
  */
+
+html, body {
+    background: #dddddd;
+}
+
+.navbar {
+    background: #d07030;
+}
