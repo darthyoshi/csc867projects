@@ -12,19 +12,52 @@ months = [
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ]
 
-cur_month = (new Date()).getMonth();
-cur_year =  (new Date()).getFullYear();
-cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay();
+cur_year = (new Date()).getFullYear()
+cur_month = (new Date()).getMonth()
+cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
+num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
 
 $(document).ready ->
     init()
 
 init = () ->
-    $(".cur_month").text((new Date).getDate()+' '+months[cur_month]+' '+cur_year)
-    $(".month").append(gen_week())
+    $(".cur_month").text(months[cur_month]+' '+cur_year)
+    for i in [0..35] by 7
+        if i-cur_first < num_days
+            $(".month").append(gen_week(i-cur_first))
 
-gen_week = () ->
+gen_week = (sunday) ->
     result = "<tr>"
-    for i in [0..cur_first] by 1
-        result += "<td></td>"
+    for i in [0..6] by 1
+        if sunday >= 0 and sunday < num_days
+            result = result + "<td id=\'day_" + (1+sunday) + "\'>" + (1+sunday) + "</td>"
+        else
+            result += "<td></td>"
+        sunday++    
     result += "</tr>"
+
+update = () ->
+    cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
+    num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
+    $(".month").empty()
+    init()
+
+$(document).on('click', '#prev_year', ( ->
+    cur_year--
+    update()
+));
+
+$(document).on('click', '#prev_month', ( ->
+    cur_month--
+    update()
+));
+
+$(document).on('click', '#next_month', ( ->
+    cur_month++
+    update()
+));
+
+$(document).on('click', '#next_year', ( ->
+    cur_year++
+    update()
+));
