@@ -48,12 +48,20 @@ $(document).on('click', '#prev_year', ( ->
 ));
 
 $(document).on('click', '#prev_month', ( ->
-    cur_month--
+    if cur_month > 0
+        cur_month--
+    else
+        cur_month = 11
+        cur_year--
     update()
 ));
 
 $(document).on('click', '#next_month', ( ->
-    cur_month++
+    if cur_month < 11
+        cur_month++
+    else
+        cur_month = 0
+        cur_year++
     update()
 ));
 
