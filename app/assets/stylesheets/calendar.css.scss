@@ -9,8 +9,8 @@
 
 .day {
     table-layout: fixed;
-    width: 5em;
-    height: 5.5em;
+    width: 100px;
+    height: 100px;
     background: #eddedd;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -24,12 +24,11 @@
     width: 50px;
 }
 
-.today {
-    @extend .day;
-    background: #dddddf;
+.form {
+    border: solid black 1px;
 }
 
-.form {
-    text-align: center;
-    border: solid black 1px;
+.selected {
+    @extend .day;
+    background: #ddddff;
 }

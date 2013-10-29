@@ -20,6 +20,7 @@ html, body {
 .navbar {
     padding: 2em;
     background: #d07030;
+    margin: 0px 0 30px;
 }
 
 .table, th {

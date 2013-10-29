@@ -15,6 +15,7 @@ months = [
 cur_year = (new Date()).getFullYear()
 cur_month = (new Date()).getMonth()
 cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
+today = (new Date()).getDate()
 num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
 
 $(document).ready () ->
@@ -32,19 +33,18 @@ list_days = () ->
     result += "</tr>"
 
 init = () ->
+    update_title()
     $(".cur_month").text(months[cur_month]+' '+cur_year)
     for i in [0..35] by 7
         if i-cur_first < num_days
             $(".month").append(gen_week(i-cur_first))
+    $('#'+today).addClass("selected")
 
 gen_week = (sunday) ->
     result = "<tr>"
     for i in [0..6] by 1
         if sunday >= 0 and sunday < num_days
-            result = result + "<td class=\'day"
-            if (1+sunday) == (new Date()).getDate()
-                result += " today"
-            result = result + "\' id=\'" + (1+sunday) + "\'>" + (1+sunday) + "</td>"
+            result = result + "<td class=\'day\' id=\'" + (1+sunday) + "\'><p>" + (1+sunday) + "</p></td>"
         else
             result += "<td class=\'empty\'></td>"
         sunday++
@@ -85,22 +85,30 @@ $(document).on('click', '#next_year', ( ->
 ));
 
 $(document).on('click', '.day', ( ->
-    id = $(this).attr('id')
-    blah = $('#'+id+" > p").html().replace("<br>",'\n')
-    alert(blah)
+    today = $(this).attr('id')
+    $('.selected').removeClass('selected')
+    $(this).addClass('selected')
+    update_title()
 ));
 
 $(document).on('click', '.add_note', ( ->
     post_note()
 ));
 
-$(document).on('keydown', '#note', ((event) =>
-    if event.keyCode is '13'
+post_note = () ->
+    if $('#note').val().trim() != ""
+        result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br>" + $('#note').val() + "</p>"
+        $("#"+today).append(result)
+        $('#note').val("")
+        $('#hour').val("00")
+        $('#min').val("00")
+    else
+        alert("Please enter a note!")
+
+update_title = () ->
+    $('#title').text("Note for "+today+'-'+months[cur_month]+'-'+cur_year)
+
+$(document).on('keydown', '#note', ((e) ->
+    if e.keyCode is 13
         post_note()
 ));
-
-post_note = () ->
-    if $('#note').val() != ""
-        result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br>" + $('#note').val() + "</p>"
-        $("#"+(new Date()).getDate()).append(result)
-        $('#note').val("")
