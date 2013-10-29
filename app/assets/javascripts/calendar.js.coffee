@@ -106,7 +106,7 @@ post_note = () ->
         alert("Please enter a note!")
 
 update_title = () ->
-    $('#title').text("Note for "+today+'-'+months[cur_month]+'-'+cur_year)
+    $('#title').text("Note for "+(if today < 10 then ("0"+today) else today)+'-'+months[cur_month]+'-'+cur_year)
 
 $(document).on('keydown', '#note', ((e) ->
     if e.keyCode is 13
