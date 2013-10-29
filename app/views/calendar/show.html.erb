@@ -1,7 +1,20 @@
 <h1>Calendar</h1>
 
+<div class='form'>
+    Add a note to today: <br>
+    H:
+    <select id='hour'></select>
+
+    M:
+    <select id='min'></select>
+
+    <br>
+    <input type='text' id='note'></input>
+    <button class='add_note'>Submit</button>
+</div>
+
 <table class='table cal_table'>
-    <thead>
+    <thead id='carousel'>
         <tr>
             <th><button id='prev_year'>&lt;&lt;</button></th>
             <th><button id='prev_month'>&lt;</button></th>

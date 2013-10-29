@@ -17,8 +17,19 @@ cur_month = (new Date()).getMonth()
 cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
 num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
 
-$(document).ready ->
+$(document).ready () ->
+    $('#carousel').append(list_days())
+    for i in [0..23]
+        $('#hour').append("<option>"+(if i < 10 then ("0" + i) else i)+"</option>")
+    for i in [0..59]
+        $('#min').append("<option>"+(if i < 10 then ("0" + i) else i)+"</option>")
     init()
+
+list_days = () ->
+    result = "<tr>"
+    for i in days
+        result = result + "<th>" + i + "</th>"
+    result += "</tr>"
 
 init = () ->
     $(".cur_month").text(months[cur_month]+' '+cur_year)
@@ -30,10 +41,13 @@ gen_week = (sunday) ->
     result = "<tr>"
     for i in [0..6] by 1
         if sunday >= 0 and sunday < num_days
-            result = result + "<td id=\'day_" + (1+sunday) + "\'>" + (1+sunday) + "</td>"
+            result = result + "<td class=\'day"
+            if (1+sunday) == (new Date()).getDate()
+                result += " today"
+            result = result + "\' id=\'" + (1+sunday) + "\'>" + (1+sunday) + "</td>"
         else
-            result += "<td></td>"
-        sunday++    
+            result += "<td class=\'empty\'></td>"
+        sunday++
     result += "</tr>"
 
 update = () ->
@@ -69,3 +83,24 @@ $(document).on('click', '#next_year', ( ->
     cur_year++
     update()
 ));
+
+$(document).on('click', '.day', ( ->
+    id = $(this).attr('id')
+    blah = $('#'+id+" > p").html().replace("<br>",'\n')
+    alert(blah)
+));
+
+$(document).on('click', '.add_note', ( ->
+    post_note()
+));
+
+$(document).on('keydown', '#note', ((event) =>
+    if event.keyCode is '13'
+        post_note()
+));
+
+post_note = () ->
+    if $('#note').val() != ""
+        result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br>" + $('#note').val() + "</p>"
+        $("#"+(new Date()).getDate()).append(result)
+        $('#note').val("")

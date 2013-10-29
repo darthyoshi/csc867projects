@@ -3,11 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cal_table th {
-    text-align: center !important;
+    text-align: center;
+    text-overflow: auto;
 }
 
-.cal_table td {
+.day {
     table-layout: fixed;
     width: 5em;
     height: 5.5em;
+    background: #eddedd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.empty {
+    background: #ddffdd;
+}
+
+#hour, #min {
+    width: 50px;
+}
+
+.today {
+    @extend .day;
+    background: #dddddf;
+}
+
+.form {
+    text-align: center;
+    border: solid black 1px;
 }
