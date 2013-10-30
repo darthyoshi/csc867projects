@@ -28,7 +28,7 @@
     border: solid black 1px;
 }
 
-.selected {
+#selected {
     @extend .day;
     background: #ddddff;
 }

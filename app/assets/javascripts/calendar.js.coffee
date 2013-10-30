@@ -37,23 +37,26 @@ init = () ->
     $(".cur_month").text(months[cur_month]+' '+cur_year)
     for i in [0..35] by 7
         if i-cur_first < num_days
-            $(".month").append(gen_week(i-cur_first))
-    $('#'+today).addClass("selected")
+            $("#month").append(gen_week(i-cur_first))
 
 gen_week = (sunday) ->
     result = "<tr>"
-    for i in [0..6] by 1
-        if sunday >= 0 and sunday < num_days
-            result = result + "<td class=\'day\' id=\'" + (1+sunday) + "\'><p>" + (1+sunday) + "</p></td>"
+    for i in [1..7]
+        if sunday+i >= 1 and sunday+i <= num_days
+            result = result + "<td class='day'"
+            if (sunday+i-today) == 0
+                result += " id='selected'"
+            result += "><p>" + (i+sunday) + "</p></td>"
         else
-            result += "<td class=\'empty\'></td>"
-        sunday++
+            result += "<td class='empty'></td>"
     result += "</tr>"
 
 update = () ->
     cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
     num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
-    $(".month").empty()
+    if today > num_days
+        today = num_days
+    $("#month").empty()
     init()
 
 $(document).on('click', '#prev_year', ( ->
@@ -85,9 +88,9 @@ $(document).on('click', '#next_year', ( ->
 ));
 
 $(document).on('click', '.day', ( ->
-    today = $(this).attr('id')
-    $('.selected').removeClass('selected')
-    $(this).addClass('selected')
+    today = $(this).children('p:first-child').text()
+    $('#selected').attr('id',"")
+    $(this).attr('id','selected')
     update_title()
 ));
 
@@ -97,8 +100,8 @@ $(document).on('click', '.add_note', ( ->
 
 post_note = () ->
     if $('#note').val().trim() != ""
-        result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br>" + $('#note').val() + "</p>"
-        $("#"+today).append(result)
+        result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br><i>" + $('#note').val() + "</i></p>"
+        $(".selected").append(result)
         $('#note').val("")
         $('#hour').val("00")
         $('#min').val("00")
