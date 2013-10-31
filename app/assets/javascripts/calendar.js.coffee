@@ -18,6 +18,9 @@ cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
 today = (new Date()).getDate()
 num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
 
+###
+generates the calendar content when the page is first loaded
+###
 $(document).ready () ->
     $('#carousel').append(list_days())
     for i in [0..23]
@@ -26,12 +29,18 @@ $(document).ready () ->
         $('#min').append("<option>"+(if i < 10 then ("0" + i) else i)+"</option>")
     init()
 
+###
+generates a table row containing the day names
+###
 list_days = () ->
     result = "<tr>"
     for i in days
         result = result + "<th>" + i + "</th>"
     result += "</tr>"
 
+###
+generates the calendar content based on the current month and date
+###
 init = () ->
     update_title()
     $(".cur_month").text(months[cur_month]+' '+cur_year)
@@ -39,6 +48,9 @@ init = () ->
         if i-cur_first < num_days
             $("#month").append(gen_week(i-cur_first))
 
+###
+generates a table row containing a week of the current month
+###
 gen_week = (sunday) ->
     result = "<tr>"
     for i in [1..7]
@@ -51,6 +63,9 @@ gen_week = (sunday) ->
             result += "<td class='empty'></td>"
     result += "</tr>"
 
+###
+updates the calendar content
+###
 update = () ->
     cur_first = (new Date(cur_year, cur_month, 1, 0, 0, 0, 0)).getDay()
     num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
@@ -59,11 +74,17 @@ update = () ->
     $("#month").empty()
     init()
 
+###
+decrements the year
+###
 $(document).on('click', '#prev_year', ( ->
     cur_year--
     update()
 ));
 
+###
+decrements the month
+###
 $(document).on('click', '#prev_month', ( ->
     if cur_month > 0
         cur_month--
@@ -73,6 +94,9 @@ $(document).on('click', '#prev_month', ( ->
     update()
 ));
 
+###
+increments the month
+###
 $(document).on('click', '#next_month', ( ->
     if cur_month < 11
         cur_month++
@@ -82,11 +106,17 @@ $(document).on('click', '#next_month', ( ->
     update()
 ));
 
+###
+increments the year
+###
 $(document).on('click', '#next_year', ( ->
     cur_year++
     update()
 ));
 
+###
+selects the cell that is clicked on
+###
 $(document).on('click', '.day', ( ->
     today = $(this).children('p:first-child').text()
     $('#selected').attr('id',"")
@@ -94,23 +124,35 @@ $(document).on('click', '.day', ( ->
     update_title()
 ));
 
+###
+post the note when the submit button is clicked
+###
 $(document).on('click', '.add_note', ( ->
     post_note()
 ));
 
+###
+posts the note time and text into the appropriate date on the calendar and resets the form fields
+###
 post_note = () ->
     if $('#note').val().trim() != ""
         result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br><i>" + $('#note').val() + "</i></p>"
-        $(".selected").append(result)
+        $("#selected").append(result)
         $('#note').val("")
         $('#hour').val("00")
         $('#min').val("00")
     else
         alert("Please enter a note!")
 
+###
+updates the form text to reflect the currently selected date
+###
 update_title = () ->
     $('#title').text("Note for "+(if today < 10 then ("0"+today) else today)+'-'+months[cur_month]+'-'+cur_year)
 
+###
+posts the note when the enter key is pressed while the text box is in focus
+###
 $(document).on('keydown', '#note', ((e) ->
     if e.keyCode is 13
         post_note()
