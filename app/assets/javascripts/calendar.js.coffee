@@ -23,10 +23,6 @@ generates the calendar content when the page is first loaded
 ###
 $(document).ready () ->
     $('#carousel').append(list_days())
-    for i in [0..23]
-        $('#hour').append("<option>"+(if i < 10 then ("0" + i) else i)+"</option>")
-    for i in [0..59]
-        $('#min').append("<option>"+(if i < 10 then ("0" + i) else i)+"</option>")
     init()
 
 ###
@@ -42,7 +38,6 @@ list_days = () ->
 generates the calendar content based on the current month and date
 ###
 init = () ->
-    update_title()
     $(".cur_month").text(months[cur_month]+' '+cur_year)
     for i in [0..35] by 7
         if i-cur_first < num_days
@@ -55,10 +50,7 @@ gen_week = (sunday) ->
     result = "<tr>"
     for i in [1..7]
         if sunday+i >= 1 and sunday+i <= num_days
-            result = result + "<td class='day'"
-            if (sunday+i-today) == 0
-                result += " id='selected'"
-            result += "><p>" + (i+sunday) + "</p></td>"
+            result = result + "<td class='day'><p>" + (i+sunday) + "</p></td>"
         else
             result += "<td class='empty'></td>"
     result += "</tr>"
@@ -115,45 +107,20 @@ $(document).on('click', '#next_year', ( ->
 ));
 
 ###
-selects the cell that is clicked on
+posts the note time and text into the appropriate date on the calendar and resets the form fields
 ###
 $(document).on('click', '.day', ( ->
     today = $(this).children('p:first-child').text()
-    $('#selected').attr('id',"")
-    $(this).attr('id','selected')
-    update_title()
-));
-
-###
-post the note when the submit button is clicked
-###
-$(document).on('click', '.add_note', ( ->
-    post_note()
-));
-
-###
-posts the note time and text into the appropriate date on the calendar and resets the form fields
-###
-post_note = () ->
-    if $('#note').val().trim() != ""
-        result = "<p>" + $('#hour').val() + ":" + $('#min').val() + "<br><i>" + $('#note').val() + "</i></p>"
-        $("#selected").append(result)
+    hour = $('#hour').val().trim()
+    min = $('#min').val().trim()
+    note = $('#note').val().trim()
+    if note != ""
         $('#note').val("")
-        $('#hour').val("00")
-        $('#min').val("00")
-    else
-        alert("Please enter a note!")
-
-###
-updates the form text to reflect the currently selected date
-###
-update_title = () ->
-    $('#title').text("Note for "+(if today < 10 then ("0"+today) else today)+'-'+months[cur_month]+'-'+cur_year)
-
-###
-posts the note when the enter key is pressed while the text box is in focus
-###
-$(document).on('keydown', '#note', ((e) ->
-    if e.keyCode is 13
-        post_note()
+        $('#hour').val("")
+        $('#min').val("")
+        if hour < 24 and hour >= 0 and !isNaN(hour) and min < 60 and min >= 0 and !isNaN(min)
+            result = "<p>" + (if hour < 10 then '0' + hour else hour) + ":" + (if min < 10 then '0' + min else min) + "<br><i>" + note + "</i></p>"
+            $(this).append(result)
+        else
+            alert("Please enter a valid input.")
 ));

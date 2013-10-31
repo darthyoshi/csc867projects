@@ -21,14 +21,9 @@
 }
 
 #hour, #min {
-    width: 50px;
+    width: 30px;
 }
 
 .form {
     border: solid black 1px;
-}
-
-#selected {
-    @extend .day;
-    background: #ddddff;
 }
