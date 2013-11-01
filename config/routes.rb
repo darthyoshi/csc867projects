@@ -1,7 +1,10 @@
 Project1::Application.routes.draw do
+  resources :appointments
+
   get "calendar/" => "calendar#show"
   get "pages/project_2"
   get "welcome/index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

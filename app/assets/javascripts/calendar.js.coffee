@@ -110,17 +110,27 @@ $(document).on('click', '#next_year', ( ->
 posts the note time and text into the appropriate date on the calendar and resets the form fields
 ###
 $(document).on('click', '.day', ( ->
-    today = $(this).children('p:first-child').text()
+    today = parseInt($(this).children('p:first-child').text())
     hour = $('#hour').val().trim()
     min = $('#min').val().trim()
     note = $('#note').val().trim()
-    if note != ""
+    if note != "" and min != "" and hour != ""
         $('#note').val("")
         $('#hour').val("")
         $('#min').val("")
         if hour < 24 and hour >= 0 and !isNaN(hour) and min < 60 and min >= 0 and !isNaN(min)
-            result = "<p>" + (if hour < 10 then '0' + hour else hour) + ":" + (if min < 10 then '0' + min else min) + "<br><i>" + note + "</i></p>"
+            @appointment = {
+                date: today
+                month: cur_month
+                year: cur_year
+                time: (if hour < 10 then '0' + hour else hour) + ":" + (if min < 10 then '0' + min else min)
+                desc: note
+            }
+            result = "<p>" + @appointment["time"] + "<br><i>" + note + "</i></p>"
             $(this).append(result)
+            json = JSON.stringify(@appointment)
+            alert(json)
+            
         else
             alert("Please enter a valid input.")
 ));
