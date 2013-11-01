@@ -26,11 +26,4 @@ ActiveRecord::Schema.define(version: 20131101061250) do
     t.datetime "updated_at"
   end
 
-  create_table "blahs", force: true do |t|
-    t.integer  "blah"
-    t.string   "grah"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

@@ -38,10 +38,15 @@ list_days = () ->
 generates the calendar content based on the current month and date
 ###
 init = () ->
+#    json = $.getJSON("/appointments/" + cur_month + '/' + cur_year + ".json", ((data) ->
+#        alert(data)
+#    ));
     $(".cur_month").text(months[cur_month]+' '+cur_year)
     for i in [0..35] by 7
         if i-cur_first < num_days
             $("#month").append(gen_week(i-cur_first))
+#    for j in json
+#        $('#'+j[:date]).append("<p>" + j[:time] + "<br><i>" + j[:desc] + "</i></p>")
 
 ###
 generates a table row containing a week of the current month
@@ -50,7 +55,7 @@ gen_week = (sunday) ->
     result = "<tr>"
     for i in [1..7]
         if sunday+i >= 1 and sunday+i <= num_days
-            result = result + "<td class='day'><p>" + (i+sunday) + "</p></td>"
+            result = result + "<td class='day' id='" + (sunday+i) + "'><p>" + (i+sunday) + "</p></td>"
         else
             result += "<td class='empty'></td>"
     result += "</tr>"
@@ -119,18 +124,18 @@ $(document).on('click', '.day', ( ->
         $('#hour').val("")
         $('#min').val("")
         if hour < 24 and hour >= 0 and !isNaN(hour) and min < 60 and min >= 0 and !isNaN(min)
-            @appointment = {
+            appointment = {
                 date: today
                 month: cur_month
                 year: cur_year
                 time: (if hour < 10 then '0' + hour else hour) + ":" + (if min < 10 then '0' + min else min)
                 desc: note
             }
-            result = "<p>" + @appointment["time"] + "<br><i>" + note + "</i></p>"
+            result = "<p>" + appointment["time"] + "<br><i>" + note + "</i></p>"
             $(this).append(result)
-            json = JSON.stringify(@appointment)
-            alert(json)
-            
+            json = JSON.stringify(appointment)
+            $.post("appointments",json)
+
         else
             alert("Please enter a valid input.")
 ));

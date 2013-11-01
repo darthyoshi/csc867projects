@@ -1,9 +1,15 @@
 class AppointmentsController < ApplicationController
-  def get
-    @appointment = Appointment.where("month = ? AND year = ?", params[:month], params[:year])
+  def show
+    @appointment = Appointment.where("month = ? AND year = ?", Integer(params[:month])-1, params[:year])
+    respond_to do |format|
+      format.html
+      format.json{
+        render :json => @appointment.to_json
+      }
+    end
   end
 
-  def post
+  def create
     @appointment = Appointment.new(appointment_params)
   end
 end

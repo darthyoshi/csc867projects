@@ -1,6 +1,6 @@
 Project1::Application.routes.draw do
-  get "appointments" => "appointments#get"
-  post "appointments" => "appointment#post"
+  get "appointments/:month/:year/" => "appointments#show"
+  post "appointments" => "appointment#create"
   get "calendar/" => "calendar#show"
   get "pages/project_2"
   get "welcome/index"
@@ -45,7 +45,7 @@ Project1::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
