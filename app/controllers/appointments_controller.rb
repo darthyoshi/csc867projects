@@ -9,12 +9,20 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    rec = Appointment.create(date: params['date'], month: params['month'], year: params['year'], time: params['time'], desc: params['desc'])
-    if rec != null
-        result = {:status => 201}
-    else
-        result = {:status => 400}
+    @appointment = Appointment.new(appointment_params)
+
+    respond_to do |format|
+      if @appointment.save
+        format.json { head :created }
+      else
+        format.json { head :unprocessable_entity }
+      end
     end
-    render :json => result.to_json
   end
+
+  private
+  # Never trust parameters from the scary internet, only allow the white list through.
+    def appointment_params
+      params.require(:appointment).permit(:date, :month, :year, :time, :desc)
+    end
 end

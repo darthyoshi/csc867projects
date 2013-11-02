@@ -115,14 +115,14 @@ posts the note time and text into the appropriate date on the calendar and reset
 ###
 $(document).on('click', '.day', ( ->
     today = parseInt($(this).children('p:first-child').text())
-    hour = $('#hour').val().trim()
-    min = $('#min').val().trim()
+    hour = parseInt($('#hour').val())
+    min = parseInt($('#min').val())
     note = $('#note').val().trim()
     if note != "" and min != "" and hour != ""
         $('#note').val("")
         $('#hour').val("")
         $('#min').val("")
-        if hour < 24 and hour >= 0 and !isNaN(hour) and min < 60 and min >= 0 and !isNaN(min)
+        if !isNaN(hour) and hour < 24 and hour >= 0 and !isNaN(min) and min < 60 and min >= 0
             appointment = {
                 date: today
                 month: cur_month
@@ -134,10 +134,12 @@ $(document).on('click', '.day', ( ->
                 type: "POST",
                 url: "appointments/send"
                 data: JSON.stringify(appointment),
-                success: ( -> (
-                    $(this).append("<p>" + appointment["time"] + "<br><i>" + note + "</i></p>")
-                )),
-                dataType: "json",
+                statusCode: {
+                    201: ( -> (
+                        $('#'+today).append("<p>" + appointment["time"] + "<br><i>" + note + "</i></p>")
+                    ))
+                },
+                dataType: "html",
                 contentType: "application/json"
             })
         else
