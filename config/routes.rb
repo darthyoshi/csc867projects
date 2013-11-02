@@ -1,6 +1,6 @@
 Project1::Application.routes.draw do
   get "appointments/:month/:year/" => "appointments#show"
-  post "appointments" => "appointment#create"
+  post "appointments/send" => "appointment#create"
   get "calendar/" => "calendar#show"
   get "pages/project_2"
   get "welcome/index"

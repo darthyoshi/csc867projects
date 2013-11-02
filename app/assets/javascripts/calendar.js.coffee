@@ -38,15 +38,14 @@ list_days = () ->
 generates the calendar content based on the current month and date
 ###
 init = () ->
-#    json = $.getJSON("/appointments/" + cur_month + '/' + cur_year + ".json", ((data) ->
-#        alert(data)
-#    ));
     $(".cur_month").text(months[cur_month]+' '+cur_year)
     for i in [0..35] by 7
         if i-cur_first < num_days
             $("#month").append(gen_week(i-cur_first))
-#    for j in json
-#        $('#'+j[:date]).append("<p>" + j[:time] + "<br><i>" + j[:desc] + "</i></p>")
+    $.getJSON("/appointments/" + (cur_month+1) + '/' + cur_year + ".json", ((data) ->
+        for j in (data)
+            $('#'+j["date"]).append("<p>" + j["time"] + "<br><i>" + j["desc"] + "</i></p>")
+    ));
 
 ###
 generates a table row containing a week of the current month
@@ -131,11 +130,16 @@ $(document).on('click', '.day', ( ->
                 time: (if hour < 10 then '0' + hour else hour) + ":" + (if min < 10 then '0' + min else min)
                 desc: note
             }
-            result = "<p>" + appointment["time"] + "<br><i>" + note + "</i></p>"
-            $(this).append(result)
-            json = JSON.stringify(appointment)
-            $.post("appointments",json)
-
+            $.ajax({
+                type: "POST",
+                url: "appointments/send"
+                data: JSON.stringify(appointment),
+                success: ( -> (
+                    $(this).append("<p>" + appointment["time"] + "<br><i>" + note + "</i></p>")
+                )),
+                dataType: "json",
+                contentType: "application/json"
+            })
         else
             alert("Please enter a valid input.")
 ));
