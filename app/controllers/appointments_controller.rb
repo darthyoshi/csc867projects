@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  #GET /appointments/:month/:year
   def show
     @appointment = Appointment.where("month = ? AND year = ?", Integer(params[:month])-1, params[:year])
     respond_to do |format|
@@ -8,6 +9,7 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  #POST /appointments/send
   def create
     @appointment = Appointment.new(appointment_params)
 
