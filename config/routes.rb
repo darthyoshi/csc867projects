@@ -1,8 +1,8 @@
 Project1::Application.routes.draw do
-  get "appointments/:month/:year/" => "appointments#show"
-  post "appointments/send" => "appointments#create"
-  get "calendar/" => "calendar#show"
-  get "pages/project_2"
+  get "projects/appointments/:month/:year/" => "appointments#show"
+  post "projects/appointments/send" => "appointments#create"
+  get "projects/calendar/" => "calendar#show"
+  get "projects/project_2"
   get "welcome/index"
 
   # The priority is based upon order of creation: first created -> highest priority.
