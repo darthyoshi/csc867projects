@@ -1,0 +1,28 @@
+groovy:
+  demo: "http://sfsuswe.com/~f12g06/"
+  repo: "n/a"
+  description:
+openmrs:
+  demo: "n/a"
+  repo: "https://code.google.com/p/sp2013-csc668-868-group1/"
+  description: "OpenMRS project"
+puzzle:
+  demo: "n/a"
+  repo: "https://code.google.com/p/su-13-project-slide-puzzle/"
+  description: "A slide puzzle game done in Unity."
+yak:
+  demo: ""
+  repo: "/https://github.com/darthyoshi/csc-667-867-team-yak"
+  description: "ArtSale"
+android:
+  demo: "n/a"
+  repo: "https://code.google.com/p/csc780-project-kchoi/"
+  description: "A basic interactive calendar (non-persistent) [deprecated]"
+quickshow:
+  demo: "n/a"
+  repo: "https://github.com/darthyoshi/quickshow"
+  description: "A slide show maker done in Processing."
+rails:
+  demo: "/"
+  repo: "https://github.com/darthyoshi/csc867projects"
+  description: "Source for this site"

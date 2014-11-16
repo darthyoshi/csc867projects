@@ -6,9 +6,20 @@ PROJECTS.each do |project,details|
   end
 end
 
-if request.fullpath == "/"
-  title = "Projects home page"
-end %>
+MAIN.each do |main,details|
+  if details['url'] == request.fullpath && request.fullpath != "/"
+    title = details['description']
+  end
+end
+
+if request.fullpath == "/projects"
+  title = "Projects page"
+elsif request.fullpath == "/"
+  title = "Home page"
+end
+
+
+%>
 <!DOCTYPE html>
 <html>
 <head>

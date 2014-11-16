@@ -1,0 +1,9 @@
+about:
+  url: "/about"
+  description: "About Me"
+resume:
+  url: "/about/resume"
+  description: "Resume"
+projects:
+  url: "/projects"
+  description: "A list of my projects"

@@ -9,6 +9,12 @@ Bundler.require(:default, Rails.env)
 PROJECTS = YAML.load(File.read(File.expand_path('config/projects.yml')))
 PROJECTS.symbolize_keys!
 
+MAIN = YAML.load(File.read(File.expand_path('config/main.yml')))
+MAIN.symbolize_keys!
+
+REPOS = YAML.load(File.read(File.expand_path('config/repos.yml')))
+REPOS.symbolize_keys!
+
 module Project1
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
