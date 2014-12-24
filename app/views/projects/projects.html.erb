@@ -1,20 +1,23 @@
-<h1>Ruby on Rails projects</h1>
-<table class='welcome-table table'>
-    <thead>
-        <tr>
-            <th>Project Name</th>
-            <th>Description</th>
-            <th>URL</th>
-        </tr>
-    </thead>
+<% categories = YAML.load(File.read(File.expand_path('config/projects.yml'))) %>
 
-    <tbody>
-    <% PROJECTS.each do |project,details| %>
-        <tr>
-            <td><%= project %></td>
-            <td><%= details['description'] %></td>
-            <td><%= link_to details['url'], details['url'] %></td>
-        </tr>
-    <% end %>
-    </tbody>
+<% categories.each do |category, details| %>
+<h2><%= category %>
+<small><%= link_to "Repository", details['repo'] %></small></h2>
+
+<table class='welcome-table table'>
+  <thead>
+    <tr>
+      <th>Project Description</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= details['project']['description'].html_safe %></td>
+      <td><%= link_to details['project']['url'], details['project']['url'] %></td>
+    </tr>
+  </tbody>
 </table>
+<hr>
+<% end %>

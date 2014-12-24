@@ -6,14 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-PROJECTS = YAML.load(File.read(File.expand_path('config/projects.yml')))
-PROJECTS.symbolize_keys!
+TITLES = YAML.load(File.read(File.expand_path('config/title.yml')))
 
 MAIN = YAML.load(File.read(File.expand_path('config/main.yml')))
-MAIN.symbolize_keys!
-
-REPOS = YAML.load(File.read(File.expand_path('config/repos.yml')))
-REPOS.symbolize_keys!
 
 module Project1
   class Application < Rails::Application

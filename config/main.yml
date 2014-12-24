@@ -1,9 +1,6 @@
-about:
+Home:
+  url: "/"
+About:
   url: "/about"
-  description: "About Me"
-resume:
-  url: "/about/resume"
-  description: "Resume"
-projects:
+Projects:
   url: "/projects"
-  description: "A list of my projects"

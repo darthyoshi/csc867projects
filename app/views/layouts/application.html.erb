@@ -1,23 +1,9 @@
 <% title = ""
-
-PROJECTS.each do |project,details|
-  if details['url'] == request.fullpath && request.fullpath != "/"
-    title = details['description']
+TITLES.each do |main,details|
+  if details['url'] == request.fullpath
+    title = details['title']
   end
 end
-
-MAIN.each do |main,details|
-  if details['url'] == request.fullpath && request.fullpath != "/"
-    title = details['description']
-  end
-end
-
-if request.fullpath == "/projects"
-  title = "Projects page"
-elsif request.fullpath == "/"
-  title = "Home page"
-end
-
 
 %>
 <!DOCTYPE html>
@@ -30,12 +16,20 @@ end
 </head>
 <body>
 <header class = 'page-header navbar'>
-    <b>Kay Choi</b>
+    <h1>Kay Choi</h1>
+    <div class='navbar-header'>
+      <% MAIN.each do |main, details| %>
+      <%= link_to ("<button><h4>"+main+"</h4></button>").html_safe, details['url'] %>
+      <% end %>
+    </div>
 </header>
 
 <div class='container hero-unit'>
     <%= yield %>
 </div>
 
+<div class='navbar' style='text-align:center'>
+  <h4>&#169; 2013-<%= Date.today.strftime('%Y') %> Kay Choi</h4>
+</div>
 </body>
 </html>

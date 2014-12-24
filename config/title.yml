@@ -1,0 +1,15 @@
+Home:
+  url: "/"
+  title: "Home Page"
+About:
+  url: "/about"
+  title: "About Me"
+Resume:
+  url: "/about/resume"
+  title: "Resume"
+Projects:
+  url: "/projects"
+  title: "A list of my projects"
+Calendar:
+  url: "/projects/calendar"
+  title: "A basic interactive calendar"
