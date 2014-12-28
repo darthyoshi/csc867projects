@@ -1,40 +1,51 @@
 GroovyGrubs:
   repo: "n/a"
-  project:
-    url: "http://sfsuswe.com/~f12g06/"
-    description: "Website for sharing food recipes"
+  projects:
+    groovy:
+      url: "http://sfsuswe.com/~f12g06/"
+      description: "Website for sharing food recipes"
 OpenMRS:
   repo: "https://code.google.com/p/sp2013-csc668-868-group1/"
-  project:
-    url: "n/a"
-    description: "OpenMRS project"
+  projects:
+    openmrs:
+      url: "n/a"
+      description: "OpenMRS project"
 Slide Puzzle:
   repo: "https://code.google.com/p/su-13-project-slide-puzzle/"
-  project:
-    url: "n/a"
-    description: "A slide puzzle game done in Unity"
+  projects:
+    puzzle:
+      url: "n/a"
+      description: "A slide puzzle game done in Unity"
 Ruby on Rails:
   repo: "https://github.com/darthyoshi/csc867project"
-  project:
-    url: "/projects/calendar"
-    description: "A basic interactive calendar (persistent)"
+  projects:
+    site:
+      url: "/"
+      description: "This site"
+    calendar:
+      url: "/projects/calendar"
+      description: "A basic interactive calendar (persistent)"
 ArtSale:
   repo: "/https://github.com/darthyoshi/csc-667-867-team-yak"
-  project:
-    url: "http://artsale.heroku.com"
-    description: "Website for buying and selling artwork"
+  projects:
+    artsale:
+      url: "http://artsale.heroku.com"
+      description: "Website for buying and selling artwork"
 Untouchable:
   repo: "https://code.google.com/p/csc780-project-kchoi/"
-  project:
-    url: "n/a"
-    description: "An Android game"
+  projects:
+    android:
+      url: "n/a"
+      description: "An Android game"
 Processing:
   repo: "https://github.com/darthyoshi/Processing"
-  project:
-    url: "n/a"
-    description: "simple image browser"
+  projects:
+    processing:
+      url: "n/a"
+      description: "simple image browser"
 Quickshow:
   repo: "https://github.com/darthyoshi/quickshow"
-  project:
-    url: "n/a"
-    description: "Quickshow slide show player"
+  projects:
+    quickshow:
+      url: "n/a"
+      description: "Quickshow slide show player"

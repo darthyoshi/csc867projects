@@ -1,10 +1,10 @@
-<% categories = YAML.load(File.read(File.expand_path('config/projects.yml'))) %>
+<% categories = YAML.load(File.read(File.expand_path("config/projects.yml"))) %>
 
-<% categories.each do |category, details| %>
+<% categories.each do |category, projects| %>
 <h2><%= category %>
-<small><%= link_to "Repository", details['repo'] %></small></h2>
+<small><%= link_to "Repository", projects["repo"] %></small></h2>
 
-<table class='welcome-table table'>
+<table class="welcome-table table">
   <thead>
     <tr>
       <th>Project Description</th>
@@ -13,10 +13,18 @@
   </thead>
 
   <tbody>
+    <% projects["projects"].each do |project, details| %>
     <tr>
-      <td><%= details['project']['description'].html_safe %></td>
-      <td><%= link_to details['project']['url'], details['project']['url'] %></td>
+      <td width="50%"><%= details["description"].html_safe %></td>
+      <td>
+        <% if details["url"] == "n/a" %>
+          <%= details["url"] %>
+        <% else %>
+          <%= link_to details["url"], details["url"] %>
+        <% end %>
+      </td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 <hr>

@@ -1,10 +1,10 @@
-<% title = ""
+<%
+title = ""
 TITLES.each do |main,details|
-  if details['url'] == request.fullpath
-    title = details['title']
+  if details["url"] == request.fullpath
+    title = details["title"]
   end
 end
-
 %>
 <!DOCTYPE html>
 <html>
@@ -15,21 +15,22 @@ end
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class = 'page-header navbar'>
-    <h1>Kay Choi</h1>
-    <div class='navbar-header'>
-      <% MAIN.each do |main, details| %>
-      <%= link_to ("<button><h4>"+main+"</h4></button>").html_safe, details['url'] %>
-      <% end %>
-    </div>
+<header class = "page-header navbar">
+  <h1>Kay Choi's site</h1>
+  <div class="navbar-header">
+    <% MAIN.each do |main, details| %>
+    <%= link_to ("<button><h4>" + main + "</h4></button>").html_safe, details["url"] %>
+    <% end %>
+  </div>
 </header>
 
-<div class='container hero-unit'>
-    <%= yield %>
+<div class="container hero-unit" style="padding-top:30px">
+  <h2 style="padding-bottom:15px"><%= title %></h3>
+  <%= yield %>
 </div>
 
-<div class='navbar' style='text-align:center'>
-  <h4>&#169; 2013-<%= Date.today.strftime('%Y') %> Kay Choi</h4>
+<div class="navbar" style="text-align:center">
+  <h4>&#169; 2013-<%= Date.today.strftime("%Y") %> Kay Choi</h4>
 </div>
 </body>
 </html>

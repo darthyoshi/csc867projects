@@ -1,4 +1,5 @@
 Project1::Application.routes.draw do
+  get "about/" => "about#about"
   get "projects/" => "projects#projects"
   get "projects/project_2" => "pages#project_2"
   get "projects/appointments/:month/:year/" => "appointments#show"
