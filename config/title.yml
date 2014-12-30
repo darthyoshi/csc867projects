@@ -3,7 +3,7 @@ Home:
   title: "Home Page"
 About:
   url: "/about"
-  title: "About Me"
+  title: "About"
 Resume:
   url: "/about/resume"
   title: "Resume"

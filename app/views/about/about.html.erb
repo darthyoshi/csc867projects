@@ -1,6 +1,32 @@
-<div style="text-align:center">
-  <%= image_tag("kaychoi.jpg") %>
+
+
+<ul class="nav nav-tabs">
+  <li><a href="#me" data-toggle="tab"><h3>Me</h3></a></li>
+  <li><a href="#site" data-toggle="tab"><h3>This Site</h3></a></li>
+</ul>
+<div class="tab-content">
+  <div id="me" class="tab-pane fade in active">
+    <div style="float:left;padding-right:20px">
+      <%= image_tag("kaychoi.jpg") %>
+    </div>
+    <div>
+    <p>
+      TODO insert blurb about myself (resume?)
+    </p>
+    </div>
+  </div>
+
+  <div id="site" class="tab-pane fade">
+    This site runs on the following technologies:
+    <ul>
+      <li>Ruby <%= RUBY_VERSION %></li>
+      <li>Rails <%= Rails::VERSION::STRING %></li>
+      <li>Sass (CSS) <%= Gem.loaded_specs["sass-rails"].version %></li>
+      <li>Bootstrap framework (Sass) <%= Gem.loaded_specs["bootstrap-sass"].version %></li>
+      <li>CoffeeScript <%= Gem.loaded_specs["coffee-rails"].version %></li>
+      <li>JQuery <%= Gem.loaded_specs["jquery-rails"].version %></li></li></li>
+      <li>PostgreSQL <%= Gem.loaded_specs["pg"].version %></li>
+    </ul>
+  </div>
 </div>
-<div style=''>
-  
-</div>
+

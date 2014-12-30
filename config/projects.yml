@@ -20,7 +20,7 @@ Ruby on Rails:
   repo: "https://github.com/darthyoshi/csc867project"
   projects:
     site:
-      url: "/"
+      url: "/about#site"
       description: "This site"
     calendar:
       url: "/projects/calendar"
