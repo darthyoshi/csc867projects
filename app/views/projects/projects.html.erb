@@ -1,31 +1,49 @@
 <% categories = YAML.load(File.read(File.expand_path("config/projects.yml"))) %>
 
-<% categories.each do |category, projects| %>
-<h2><%= category %>
-<small><%= link_to "Repository", projects["repo"] %></small></h2>
+<ul class="nav nav-tabs">
+  <% categories.each do |category, projects| %>
+  <li><a href="#<%= category %>" data-toggle="tab"><%= category %></a></li>
+  <% end %>
+</ul>
 
-<table class="welcome-table table">
-  <thead>
-    <tr>
-      <th>Project Description</th>
-      <th>URL</th>
-    </tr>
-  </thead>
+<div class="tab-content">
+  <% categories.each do |category, repos| %>
+  <div id="<%= category %>" class="tab-pane fade<% if category == "LAMP" %> in active<% end %>">
+    <h2><%= category %></h2>
 
-  <tbody>
-    <% projects["projects"].each do |project, details| %>
-    <tr>
-      <td width="50%"><%= details["description"].html_safe %></td>
-      <td>
-        <% if details["url"] == "n/a" %>
-          <%= details["url"] %>
-        <% else %>
-          <%= link_to details["url"], details["url"] %>
+    <% repos.each do |repo, project| %>
+    <h3>
+      <%= link_to "Repository", repo %>
+      <small>(<%= project["date"] %>)</small>
+    </h3>
+
+    <table class="welcome-table table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% project["projects"].each do |name, details| %>
+        <tr>
+          <td width="33%"><%= name %></td>
+          <td width="33%"><%= details["description"].html_safe %></td>
+          <td>
+            <% if details["url"] == "n/a" %>
+              <%= details["url"] %>
+            <% else %>
+              <%= link_to details["url"], details["url"] %>
+            <% end %>
+          </td>
+        </tr>
         <% end %>
-      </td>
-    </tr>
+      </tbody>
+    </table>
+
     <% end %>
-  </tbody>
-</table>
-<hr>
-<% end %>
+  </div>
+  <% end %>
+</div>

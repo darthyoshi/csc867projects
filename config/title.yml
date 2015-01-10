@@ -9,7 +9,16 @@ Resume:
   title: "Resume"
 Projects:
   url: "/projects"
-  title: "A list of my projects"
+  title: "Projects I've worked on"
 Calendar:
-  url: "/projects/calendar"
+  url: "/calendar"
   title: "A basic interactive calendar"
+Puzzle:
+  url: "/slidepuzzle"
+  title: "SlidePuzzle"
+Untouchable:
+  url: "/untouchable"
+  title: "Untouchable"
+ImageBrowser:
+  url: "/imagebrowser"
+  title: "A simple image browser"

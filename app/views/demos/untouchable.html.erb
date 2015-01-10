@@ -1,0 +1,43 @@
+Download demo:
+<ul><li><%= link_to "Android", "http://csc780-project-kchoi.googlecode.com/svn/trunk/Untouchable/app/build/outputs/apk/app-debug.apk" %>
+</li></ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+  <li><a href="#screens" data-toggle="tab"><h3>Screenshots</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    <p>
+      <i>Untouchable</i> was my term project for a mobile applications course. The base concept
+      is a shmup/bullet-hell game in which the player controls a small fighter and must survive
+      against waves of enemy fire, in the style of <i>Galaga</i> or <i>Space Invaders</i>. In
+      <i>Untouchable</i>, the objective is to avoid all enemy fire until the meter is fully
+      charged, at which point the enemy spaceship is destroyed and the stage is cleared. If the
+      player is hit at any point, the game ends, but tapping the screen will clear all enemy
+      fire from the screen at the cost of partially depleting the meter. The player can control
+      the ship either by tilting the phone, or by dragging a finger along the screen.
+    </p>
+
+    <p>
+      <i>Untouchable</i> was originally developed for the Samsung Galaxy Nexus phone, which has
+      a screen resolution of 720x1280 pixels. Due to time constraints during the initial
+      development period and a continuing lack of access to phones with different resolutions,
+      the game is not has not been localized for any other hardware systems. Although the game
+      will still run on phones with different resolutions, the size and position of game
+      elements will likely not match the screenshots.
+    </p>
+  </div>
+
+  <div id="screens" class="tab-pane fade">
+    <h2>Title screen</h2>
+    <p><%= image_tag("Untouchable/titlescreen.jpg") %></p>
+
+    <h2>Game screen</h2>
+    <p><%= image_tag("Untouchable/gamescreen.jpg") %></p>
+
+    <h2>High score screen</h2>
+    <p><%= image_tag("Untouchable/gamescreen.jpg") %></p>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+Download demo:
+<ul>
+  <li><%= link_to "Linux", "https://github.com/darthyoshi/Processing/raw/master/P3/Executables/ImgBrowser%20-%20Linux.zip" %></li>
+  <li><%= link_to "Mac", "https://github.com/darthyoshi/Processing/raw/master/P3/Executables/ImgBrowser%20-%20Mac.zip" %></li>
+  <li><%= link_to "Windows", "https://github.com/darthyoshi/Processing/raw/master/P3/Executables/ImgBrowser%20-%20Windows.zip" %></li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+  <li><a href="#screens" data-toggle="tab"><h3>Screenshots</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    This simple image browser is the culmination of a series of minor assignments for a multimedia
+    applications course. Created primarily using the <%= link_to "Processing", "http://processing.org" %>
+    library, the browser exhibits several multimedia interactions:
+
+    <ul style="font-size=18px">
+      <li>images:
+        <ul>
+          <li>loads from "data/img" directory</li>
+          <li>scales and displays on screen as appropriate</li>
+          <li>loaded images can have associated meta-data:
+            <ul>
+              <li>each image has its own set of text tags</li>
+              <li>tags can be saved to and loaded from "data/img/tags" directory</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>audio:
+        <ul>
+          <li>loads from "data/sounds" directory</li>
+          <li>sounds play in response to program state change</li>
+        </ul>
+      </li>
+
+      <li>video:
+        <ul>
+          <li>captured from camera if available</li>
+          <li>captured image is filtered and processed for gesture tracking
+            <ul>
+              <li>blobs are used to simulate mouse pointer</li>
+              <li>enlarging the size of a detected blob constitutes a mouse click</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>user interaction:
+        <ul>
+          <li>keyboard
+            <ul>
+              <li>left and right arrows scroll through images</li>
+              <li>up and down arrows zoom in and out of currently selected image</li>
+              <li>angle brackets (&lt; &gt;) paginate through images</li>
+              <li>space bar sets color used for gesture tracking</li>
+              <li>'d' key toggles debug mode which shows detected blobs</li>
+              <li>if focused on text field, can type in text tag</li>
+              <li>'esc' key exits program</li>
+            </ul>
+          </li>
+          <li>mouse
+            <ul>
+              <li>selects and zooms into an image on the current page with a click</li>
+              <li>interact with buttons and text field UI components</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    These interactions were implemented using Damien Di Fede's
+    <%= link_to "Minim", "http://code.compartmental.net/tools/minim/" %> audio library,
+    Andreas Schlegel's <%= link_to "ControlP5", "http://www.sojamo.de/libraries/controlP5/" %> UI library,
+    and Julien Gachadot's <%= link_to "BlobDetection", "http://www.v3ga.net/processing/BlobDetection/" %>
+    library.
+  </div>
+
+  <div id="screens" class="tab-pane fade">
+    <h2>Main screen</h2>
+    <p><%= image_tag("ImgBrowser/mainview.jpg") %></p>
+
+    <h2>Image view mode</h2>
+    <p><%= image_tag("ImgBrowser/imageview.jpg") %></p>
+
+    <h2>Calibration screen</h2>
+    <p><%= image_tag("ImgBrowser/calibview.jpg") %></p>
+
+    <h2>Debug mode</h2>
+    <p><%= image_tag("ImgBrowser/debugview.jpg") %></p>
+  </div>
+</div>

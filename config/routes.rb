@@ -1,16 +1,19 @@
 Project1::Application.routes.draw do
+  get "imagebrowser/" => "demos#imgbrowser"
+  get "untouchable/" => "demos#untouchable"
+  get "slidepuzzle/" => "demos#slidepuzzle"
   get "about/" => "about#about"
   get "projects/" => "projects#projects"
-  get "projects/appointments/:month/:year/" => "appointments#show"
-  post "projects/appointments/send" => "appointments#create"
-  get "projects/calendar/" => "calendar#show"
+  get "appointments/:month/:year/" => "appointments#show"
+  post "appointments/send" => "appointments#create"
+  get "calendar/" => "calendar#show"
   get "welcome/index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root "welcome#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

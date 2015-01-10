@@ -22,8 +22,9 @@ num_days = (new Date(cur_year, cur_month+1, 0)).getDate()
 generates the calendar content when the page is first loaded
 ###
 $(document).ready () ->
-    $('#carousel').append(list_days())
-    init()
+    if window.location.pathname is "/calendar"
+        $('#carousel').append(list_days())
+        init()
 
 ###
 generates a table row containing the day names
@@ -42,7 +43,7 @@ init = () ->
     for i in [0..35] by 7
         if i-cur_first < num_days
             $("#month").append(gen_week(i-cur_first))
-    $.getJSON("/projects/appointments/" + (cur_month+1) + '/' + cur_year + ".json", ((data) ->
+    $.getJSON("/appointments/" + (cur_month+1) + '/' + cur_year + ".json", ((data) ->
         for j in (data)
             $('#'+j["date"]).append("<p>" + j["time"] + "<br><i>" + j["desc"] + "</i></p>")
     ));
@@ -132,7 +133,7 @@ $(document).on('click', '.day', ( ->
             }
             $.ajax({
                 type: "POST",
-                url: "/projects/appointments/send"
+                url: "/appointments/send"
                 data: JSON.stringify(appointment),
                 statusCode: {
                     201: ( -> (
