@@ -22,3 +22,6 @@ Untouchable:
 ImageBrowser:
   url: "/imagebrowser"
   title: "A simple image browser"
+OpenMRS:
+  url: "/openmrs"
+  title: "OpenMRS DSS module"

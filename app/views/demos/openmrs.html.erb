@@ -1,0 +1,133 @@
+Download demo:
+<ul>
+  <li><%= link_to "OpenMRS DSS module", "http://sp2013-csc668-868-group1.googlecode.com/svn/trunk/OpenMRSSubmissions/05142013/Group-1/dssmodule.omod" %> (requires <%= link_to "OpenMRS", "http://openmrs.org" %> installation)</li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+  <li><a href="#screens" data-toggle="tab"><h3>Screencast</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    <p>
+      OpenMRS is an open source medical records system designed for use in developing nations
+      which lack the resources or infrastructure to support the use of proprietary medical
+      software. This module, which implements a decision support system (DSS) to provide alerts
+      to physicians based on user-defined rules, was a term project for an object-oriented
+      software development course. The group consisted of the following members:
+    </p>
+
+    <ul>
+      <li><%= mail_to "bierman@mail.sfsu.edu", "Robert Biermann" %> (group leader)</li>
+      <li><%= mail_to "woeltjen@mail.sfsu.edu", "Victor Woeltjen" %> (group leader)</li>
+      <li><%= mail_to "steven.gimeno@gmail.com", "Steven Gimeno" %></li>
+      <li><%= mail_to "LumberJasonTwo19@gmail.com", "Jason Lum" %></li>
+      <li><%= mail_to "CALiforykng5i5@gmail.com", "Ying Kit Ng" %></li>
+      <li><%= mail_to "uy.biancamarie@gmail.com", "Bianca Uy" %></li>
+      <li><%= link_to "myself", "/about#me" %></li>
+    </ul>
+
+    <p>
+      The module parses rules written in a simple decision support language to create alerts
+      when patient data conditions are met. A full language specification can be found in the
+      <%= link_to "full project documentation", "http://sp2013-csc668-868-group1.googlecode.com/svn/trunk/OpenMRSSubmissions/05142013/Group-1/Documentation.pdf" %>.
+    </p>
+  </div>
+
+  <div id="screens" class="tab-pane fade">
+    <%= video_tag(["http://sp2013-csc668-868-group1.googlecode.com/svn/trunk/OpenMRSSubmissions/presentation/demo-kay.mp4", "demo-kay.ogv"], controls: true, autobuffer: true, size: "640x480", preload: true) do %>
+      If you are unable to view the screencast, it may be downloaded <%= link_to "here", "http://sp2013-csc668-868-group1.googlecode.com/svn/trunk/OpenMRSSubmissions/presentation/demo-kay.mp4" %>.
+    <% end %>
+
+    <h3>Demo script</h3>
+    <div class="well">
+      (Log into OpenMRS)<br>
+      (Go to Admin page)<br>
+      <br>
+      Under DSS Compiler, there are two links. <br>
+      <br>
+      (Click on "Upload DSS File")<br>
+      <br>
+      "Upload DSS File" allows you to load an existing file from your machine onto OpenMRS. If
+      there are any errors within the file, it will report back.<br>
+      <br>
+      (Return to Admin page)<br>
+      (Click on "Create DSS File")<br>
+      <br>
+      "Create DSS File" allows you to create a rule via OpenMRS, load and modify an existing
+      rule, and save a rule to the local file system. <br>
+      <br>
+      (Paste demo in textbox)<br>
+      <br>
+      To save time, we have created a rule and copied it on the clipboard. <br>
+      <br>
+      As you can see, this demo program shows a simple alert to the patient dashboard, to verify
+      that it is working, and <br>
+      then has some conditions to check the patient's weight and throw an alert if the patient
+      is over- or under-weight.<br>
+      <br>
+      If there's an error on the file, it will be reported. For example, removing the last curly
+      bracket should get an error.<br>
+      <br>
+      (Remove curly brackets and save)<br>
+      <br>
+      It displays the error on top and retains the information that was entered allowing you to
+      keep working on it, if desired.<br>
+      <br>
+      (Fix the error &amp; save)<br>
+      <br>
+      We have now create a new rule. You can also see it is now available in the drop down menu.<br>
+      We can also save this rule to our local file system.<br>
+      <br>
+      (Show drop downs and Save button) <br>
+      <br>
+      All rules are saved in the folder 'dssmodule' under the same location as the openmrs-runtime
+      properties file<br>
+      The source code is saved, and the AST is saved to XML so that it doesn't need to be re-compiled
+      later.<br>
+      <br>
+      You can see that the structure of the XML closely matches the structure of the compiled
+      Abstract Syntax Tree. <br>
+      Specific nodes are identified by class name, allowing them to be restored using reflection.<br>
+      <br>
+      (Show dssModule folder)<br>
+      <br>
+      If it's working correctly, "Test rule is active" should be on the dashboard. <br>
+      And a possible warning on the patient summary, depending on the observation records of the
+      patient.<br>
+      <br>
+      (Show patient dashboard &amp; summary)<br>
+      <br>
+      This illustrates the alerts are working.<br>
+      <br>
+      As new observations are added, the alerts should run if new information applies to the rule. <br>
+      <br>
+      (Add new observation using the Vitals tab - fill in all text fields and dropdowns)<br>
+      (Change the weight to 10 guarantees an alert to show in patient summary)<br>
+      <br>
+      A warning should appear on the patient summary.<br>
+      <br>
+      (Display the patient summary)<br>
+      <br>
+      The alert is there.<br>
+      The user can later modify the rules.<br>
+      <br>
+      (Go to Create DSS File)<br>
+      (Select 'demo' on the drop down menu and load)<br>
+      <br>
+      Choose the rule they want to modify, in this case we are changing 'demo'.<br>
+      We can add another alert - let's say we want to show that same alert to the patient dashboard.<br>
+      <br>
+      (Modify the rule - copy and paste &lt;20 alert to go to dashboard)<br>
+      <br>
+      And we can save it. If you are overwriting a rule, it needs confirmation that you are
+      permanently changing the rule.<br>
+      <br>
+      (Choose demo to be saved locally)<br>
+      (Show the file and that the changes reflected)<br>
+      <br>
+      Lastly, we can check to make sure the new alert is showing.
+    </div>
+  </div>
+</div>

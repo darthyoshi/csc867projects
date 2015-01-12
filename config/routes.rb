@@ -2,6 +2,7 @@ Project1::Application.routes.draw do
   get "imagebrowser/" => "demos#imgbrowser"
   get "untouchable/" => "demos#untouchable"
   get "slidepuzzle/" => "demos#slidepuzzle"
+  get "openmrs/" => "demos#openmrs"
   get "about/" => "about#about"
   get "projects/" => "projects#projects"
   get "appointments/:month/:year/" => "appointments#show"

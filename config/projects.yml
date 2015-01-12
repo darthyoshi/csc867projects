@@ -9,8 +9,8 @@ Java:
   "https://code.google.com/p/sp2013-csc668-868-group1/source/browse/trunk/OpenMRSSubmissions/":
     date: "Spring 2013"
     projects:
-      "OpenMRS Module":
-        url: "n/a"
+      "OpenMRS DSS Module":
+        url: "/openmrs"
         description: "A module for OpenMRS"
 Unity:
   "https://code.google.com/p/su-13-project-slide-puzzle/":

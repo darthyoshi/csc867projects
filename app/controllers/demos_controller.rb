@@ -7,4 +7,7 @@ class DemosController < ApplicationController
 
   def imgbrowser
   end
+
+  def openmrs
+  end
 end
