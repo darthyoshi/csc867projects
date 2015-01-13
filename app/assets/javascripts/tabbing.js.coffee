@@ -12,8 +12,9 @@ $(document).ready () ->
 
 ###
   change URL hash when switching tabs
-###
+##
 $ ->
   hash = window.location.hash
   $(".nav-tabs a").click (e) ->
     window.location.hash = @hash
+###

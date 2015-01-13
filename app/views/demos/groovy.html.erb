@@ -1,0 +1,36 @@
+Demo site:
+<ul>
+  <li><%= link_to "GroovyGrubs.com", "http://sfsuswe.com/~f12g06/" %></li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    <p>
+      GroovyGrubs.com was a group term project for a software engineering course. The project was
+      designed to simulate as much as possible a typical devlopment cycle in a corporate environment.
+      Each group was given the task to create a site where users could share recipes with each other,
+      using agile development techniques. Our group consisted of the following members:
+    </p>
+
+    <ul>
+      <li><%= link_to "Kay Choi", "/about#me" %> (group leader)</li>
+      <li><%= mail_to "tdemer@mail.sfsu.edu", "Therese Demers" %></li>
+      <li><%= mail_to "jlatie@mail.sfsu.edu", "James Latief" %></li>
+      <li><%= mail_to "ipitts@mail.sfsu.edu", "Ian Pitts" %></li>
+      <li><%= mail_to "vtobar@mail.sfsu.edu", "Victor Tobar" %></li>
+      <li><%= mail_to "dtu@mail.sfsu.edu", "Dylan Tu" %></li>
+    </ul>
+
+    <p>
+      The site was built on a <%= link_to "LAMP stack", "https://en.wikipedia.org/wiki/LAMP_(software_bundle)" %>.
+      In addition to the front- and back-end technologies included with the stack, I wrote a custom CSS
+      scheme for front-end styling. The full project documentation includes a more complete listing of
+      the technologies used by the site, and can be found
+      <%= link_to "here", "https://drive.google.com/file/d/0B8DtqFIE221kR1l0TXR5aUtLWVU/view?usp=sharing" %>.
+    </p>
+  </div>
+</div>

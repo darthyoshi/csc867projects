@@ -25,3 +25,12 @@ ImageBrowser:
 OpenMRS:
   url: "/openmrs"
   title: "OpenMRS DSS module"
+GroovyGrubs:
+  url: "/groovygrubs"
+  title: "GroovyGrubs"
+ArtSale:
+  url: "/artsale"
+  title: "ArtSale"
+Quickshow:
+  url: "/quickshow"
+  title: "Quickshow"

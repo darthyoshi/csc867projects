@@ -13,31 +13,28 @@
 
     <% repos.each do |repo, project| %>
     <h3>
-      <%= link_to "Repository", repo %>
-      <small>(<%= project["date"] %>)</small>
+      <%= project["date"] %>
+      <small>(<%= link_to "Repository", repo %>)</small>
     </h3>
 
     <table class="welcome-table table">
       <thead>
         <tr>
-          <th>Name</th>
+          <th width="50%">Project</th>
           <th>Description</th>
-          <th>URL</th>
         </tr>
       </thead>
 
       <tbody>
         <% project["projects"].each do |name, details| %>
         <tr>
-          <td width="33%"><%= name %></td>
-          <td width="33%"><%= details["description"].html_safe %></td>
           <td>
             <% if details["url"] == "n/a" %>
-              <%= details["url"] %>
+              <%= name %>
             <% else %>
-              <%= link_to details["url"], details["url"] %>
-            <% end %>
-          </td>
+              <%= link_to name, details["url"] %>
+            <% end %></td>
+          <td><%= details["description"].html_safe %></td>
         </tr>
         <% end %>
       </tbody>

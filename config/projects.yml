@@ -3,7 +3,7 @@
     date: "Fall 2012"
     projects:
       GroovyGrubs:
-        url: "http://sfsuswe.com/~f12g06/"
+        url: "/groovygrubs"
         description: "A website for sharing food recipes"
 Java:
   "https://code.google.com/p/sp2013-csc668-868-group1/source/browse/trunk/OpenMRSSubmissions/":
@@ -12,6 +12,18 @@ Java:
       "OpenMRS DSS Module":
         url: "/openmrs"
         description: "A module for OpenMRS"
+  "https://github.com/darthyoshi/Processing":
+    date: "Fall 2014"
+    projects:
+      ImageBrowser:
+        url: "/imagebrowser"
+        description: "A simple image browser"
+  "https://github.com/darthyoshi/quickshow":
+    date: "Fall 2014"
+    projects:
+      Quickshow:
+        url: "/quickshow"
+        description: "A slide show player"
 Unity:
   "https://code.google.com/p/su-13-project-slide-puzzle/":
     date: "Summer 2013"
@@ -23,7 +35,7 @@ Rails:
   "https://github.com/darthyoshi/csc867project":
     date: "Fall 2013"
     projects:
-      "This Site":
+      "Portfolio":
         url: "/about#site"
         description: "This site"
       Calendar:
@@ -33,7 +45,7 @@ Rails:
     date: "Fall 2013"
     projects:
       ArtSale:
-        url: "http://artsale.heroku.com"
+        url: "/artsale"
         description: "A website for buying and selling artwork"
 Android:
   "https://code.google.com/p/csc780-project-kchoi/":
@@ -42,16 +54,3 @@ Android:
       Untouchable:
         url: "/untouchable"
         description: "An Android game"
-Processing:
-  "https://github.com/darthyoshi/Processing":
-    date: "Fall 2014"
-    projects:
-      ImageBrowser:
-        url: "/imagebrowser"
-        description: "A simple image browser"
-  "https://github.com/darthyoshi/quickshow":
-    date: "Fall 2014"
-    projects:
-      Quickshow:
-        url: "http://thecity.sfsu.edu/~mlee5/quickshowsite/"
-        description: "A slide show player"

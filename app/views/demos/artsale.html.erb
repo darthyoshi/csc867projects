@@ -1,0 +1,41 @@
+<style>
+.yak {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+}
+</style>
+
+Demo site:
+<ul>
+  <li><%= link_to "Artsale", "http://artsale.heroku.com" %></li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    <p>
+      ArtSale was a group term project for an internet applications course. The site is an
+      online store that allows users to buy and sell artwork from each other. All users are
+      allowed to browse the available pieces, but only registered users have permission to
+      buy and sell artwork. Our group, Team YAK, consisted of the following members:
+    </p>
+
+    <ul>
+      <li><%= mail_to "yuliabilochapka@gmail.com", "<span class='yak'>Y</span>ulia Falls".html_safe %></li>
+      <li><%= mail_to "asauron@gmail.com", "<span class='yak'>A</span>binaya".html_safe %> (group leader)</li>
+      <li><%= link_to "<span class='yak'>K</span>ay Choi".html_safe, "/about#me" %></li>
+    </ul>
+
+    <p>
+      The site was built in <%= link_to "Rails","http://rubyonrails.org" %>, with front-end
+      support from the <%= link_to "Bootstrap", "http://getbootstrap.com" %> framework and
+      back-end support using <%= link_to "PostgreSQL", "http://postgresql.org" %>. A more
+      indepth overview of the site can be found
+      <%= link_to "here", "https://docs.google.com/presentation/d/1N0y0Ny3hy4rj8OcipG-1cm3l04J7GE7rKgt3nTjXxec/edit?usp=sharing" %>.
+    </p>
+  </div>
+</div>

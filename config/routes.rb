@@ -1,8 +1,11 @@
 Project1::Application.routes.draw do
+  get "artsale/" => "demos#artsale"
+  get "groovygrubs/" => "demos#groovy"
   get "imagebrowser/" => "demos#imgbrowser"
-  get "untouchable/" => "demos#untouchable"
-  get "slidepuzzle/" => "demos#slidepuzzle"
   get "openmrs/" => "demos#openmrs"
+  get "quickshow/" => "demos#quickshow"
+  get "slidepuzzle/" => "demos#slidepuzzle"
+  get "untouchable/" => "demos#untouchable"
   get "about/" => "about#about"
   get "projects/" => "projects#projects"
   get "appointments/:month/:year/" => "appointments#show"

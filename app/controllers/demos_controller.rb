@@ -10,4 +10,10 @@ class DemosController < ApplicationController
 
   def openmrs
   end
+
+  def artsale
+  end
+
+  def groovy
+  end
 end

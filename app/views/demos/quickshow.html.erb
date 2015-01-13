@@ -1,0 +1,34 @@
+Demo site:
+<ul>
+  <li><%= link_to "Quickshow", "http://thecity.sfsu.edu/~mlee5/quickshowsite/" %></li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    <p>
+      <i>Quickshow</i> was my final project for a multimedia applications course. The application
+      is a slide show player intended to be easy to use, so that the user can quickly take a batch
+      of images and create a slide show with them. The user also has the option of including audio
+      files to provide a soundtrack for the slide show. The development team for <i>Quickshow</i>
+      consisted of the following members:
+    </p>
+
+    <ul>
+      <li><%= mail_to "mlee5@mail.sfsu.edu", "Moses Lee" %></li>
+      <li><%= link_to "Kay Choi", "/about#me" %></li>
+    </ul>
+
+    <p>
+      <i>Quickshow</i> was built in Java using the <%= link_to "Processing", "http://processing.org" %>
+      library, with additional functionality provided by Damien Di Fede's
+      <%= link_to "Minim", "http://code.compartmental.net/tools/minim/" %> audio library and
+      Andreas Schlegel's <%= link_to "ControlP5", "http://www.sojamo.de/libraries/controlP5/" %>
+      UI library. The project documentation can be found
+      <%= link_to "here", "https://docs.google.com/document/d/1QUaTqkllqi4XX4WzAuFCqRys-s2aeN-SrPL9dK0o3KI/edit?usp=sharing" %>.
+    </p>
+  </div>
+</div>
