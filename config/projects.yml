@@ -1,12 +1,12 @@
 "LAMP":
-  "https://code.google.com/p/groovygrubs/":
+  "https://github.com/darthyoshi/groovygrubs":
     date: "Fall 2012"
     projects:
       GroovyGrubs:
         url: "/groovygrubs"
         description: "A website for sharing food recipes"
 Java:
-  "https://code.google.com/p/sp2013-csc668-868-group1/source/browse/trunk/OpenMRSSubmissions/":
+  "https://github.com/darthyoshi/sp2013-csc668-868-group1/tree/master/OpenMRSSubmissions":
     date: "Spring 2013"
     projects:
       "OpenMRS DSS Module":
@@ -25,7 +25,7 @@ Java:
         url: "/quickshow"
         description: "A slide show player"
 Unity:
-  "https://code.google.com/p/su-13-project-slide-puzzle/":
+  "https://github.com/darthyoshi/su-13-project-slide-puzzle":
     date: "Summer 2013"
     projects:
       SlidePuzzle:
@@ -48,7 +48,7 @@ Rails:
         url: "/artsale"
         description: "A website for buying and selling artwork"
 Android:
-  "https://code.google.com/p/csc780-project-kchoi/":
+  "https://github.com/darthyoshi/csc780-project-kchoi":
     date: "Spring 2014"
     projects:
       Untouchable:
