@@ -14,7 +14,13 @@
     <% repos.each do |repo, project| %>
     <h3>
       <%= project["date"] %>
-      <small>(<%= link_to "Repository", repo %>)</small>
+      <small>(
+        <% if repo == "private" %>
+          code available upon request
+        <% else %>
+          <%= link_to "Repository", repo %>
+        <% end %>
+      )</small>
     </h3>
 
     <table class="welcome-table table">

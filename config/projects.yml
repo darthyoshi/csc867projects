@@ -12,7 +12,7 @@ Java:
       "OpenMRS DSS Module":
         url: "/openmrs"
         description: "A module for OpenMRS"
-  "https://github.com/darthyoshi/Processing":
+  "private":
     date: "Fall 2014"
     projects:
       ImageBrowser:
