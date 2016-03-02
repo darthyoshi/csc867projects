@@ -1,0 +1,41 @@
+Download demo:
+<ul>
+  <li><%= link_to "JAR", "https://github.com/darthyoshi/YAJMinesweeper/tree/master/dist" %></li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
+  <li><a href="#screens" data-toggle="tab"><h3>Screenshots</h3></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="over" class="tab-pane fade in active">
+    <p>
+      A Java implementation of the classic Windows Minesweeper game. The game uses the 
+      <%= link_to "Processing", "http://processing.org" %> library, with additional UI functionality provided 
+      by the <%= link_to "Swing", "http://docs.oracle.com/javase/tutorial/uiswing/start/about.html" %> and 
+      <%= link_to "AWT", "https://en.wikipedia.org/wiki/Abstract_Window_Toolkit" %> frameworks. Most of the 
+      functionality of the original Windows game has been preserved; the only thing missing is the ability to 
+      define games with customized board sizes and mine counts.
+    </p>
+
+    <p>
+      The graphics for this game were taken from the original Windows game as well, and thus copyrighted to 
+      Robert Donner and Curt Johnson, Microsoft Corporation.
+    </p>
+  </div>
+
+  <div id="screens" class="tab-pane fade">
+    <p>
+      <h3>Game screens</h3>
+      Beginner<br>
+      <%= image_tag("YAJM/beginner.jpg") %><br>
+      Intermediate<br>
+      <%= image_tag("YAJM/intermediate.jpg") %><br>
+      Expert<br>
+      <%= image_tag("YAJM/expert.jpg") %><br>
+      Game over (Beginner)<br>
+      <%= image_tag("YAJM/gameover.jpg") %><br>
+    </p>
+  </div>
+</div>

@@ -8,7 +8,7 @@
 
 <div class="tab-content">
   <% categories.each do |category, repos| %>
-  <div id="<%= category %>" class="tab-pane fade<% if category == "LAMP" %> in active<% end %>">
+  <div id="<%= category %>" class="tab-pane fade<% if category == "Computer Vision" %> in active<% end %>">
     <h2><%= category %></h2>
 
     <% repos.each do |repo, project| %>
@@ -35,8 +35,8 @@
         <% project["projects"].each do |name, details| %>
         <tr>
           <td>
-            <% if details["url"] == "n/a" %>
-              <%= name %>
+            <% if details["url"] == "TODO" %>
+              TODO: page for <%= name %>
             <% else %>
               <%= link_to name, details["url"] %>
             <% end %></td>

@@ -1,37 +1,49 @@
-"LAMP":
-  "https://github.com/darthyoshi/groovygrubs":
-    date: "Fall 2012"
+"Computer Vision":
+  "https://github.com/darthyoshi/beetracker":
+    date: "Spring 2015 - Spring 2016"
     projects:
-      GroovyGrubs:
-        url: "/groovygrubs"
-        description: "A website for sharing food recipes"
-Java:
-  "https://github.com/darthyoshi/sp2013-csc668-868-group1/tree/master/OpenMRSSubmissions":
-    date: "Spring 2013"
+      BeeTracker:
+        url: "/beetracker"
+        description: "A program for tracking bees in video footage"
+  "https://github.com/darthyoshi/csc621-821-sp2015":
+    date: "Spring 2015"
     projects:
-      "OpenMRS DSS Module":
-        url: "/openmrs"
-        description: "A module for OpenMRS"
-  "private":
-    date: "Fall 2014"
+      Visualize:
+        url: "/visualize"
+        description: "A medical imaging system"
+Games:
+  "https://github.com/darthyoshi/YAJMinesweeper":
+    date: "Fall 2015"
     projects:
-      ImageBrowser:
-        url: "/imagebrowser"
-        description: "A simple image browser"
-  "https://github.com/darthyoshi/quickshow":
-    date: "Fall 2014"
+      YAJMinesweeper:
+        url: "/yajminesweeper"
+        description: "(Y)et (A)nother (J)ava Minesweeper game"
+  "https://github.com/darthyoshi/csc780-project-kchoi":
+    date: "Spring 2014"
     projects:
-      Quickshow:
-        url: "/quickshow"
-        description: "A slide show player"
-Unity:
+      Untouchable:
+        url: "/untouchable"
+        description: "An Android game"
   "https://github.com/darthyoshi/su-13-project-slide-puzzle":
     date: "Summer 2013"
     projects:
       SlidePuzzle:
         url: "/slidepuzzle"
         description: "A slide puzzle game done in Unity"
-Rails:
+Multimedia:
+  "https://github.com/darthyoshi/quickshow":
+    date: "Fall 2014"
+    projects:
+      Quickshow:
+        url: "/quickshow"
+        description: "A slide show player"
+  "private":
+    date: "Fall 2014"
+    projects:
+      ImageBrowser:
+        url: "/imagebrowser"
+        description: "A simple image browser"
+"Web":
   "https://github.com/darthyoshi/csc867project":
     date: "Fall 2013"
     projects:
@@ -47,10 +59,15 @@ Rails:
       ArtSale:
         url: "/artsale"
         description: "A website for buying and selling artwork"
-Android:
-  "https://github.com/darthyoshi/csc780-project-kchoi":
-    date: "Spring 2014"
+  "https://github.com/darthyoshi/sp2013-csc668-868-group1/tree/master/OpenMRSSubmissions":
+    date: "Spring 2013"
     projects:
-      Untouchable:
-        url: "/untouchable"
-        description: "An Android game"
+      "OpenMRS DSS Module":
+        url: "/openmrs"
+        description: "A module for OpenMRS"
+  "https://github.com/darthyoshi/groovygrubs":
+    date: "Fall 2012"
+    projects:
+      GroovyGrubs:
+        url: "/groovygrubs"
+        description: "A website for sharing food recipes"

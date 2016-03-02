@@ -1,8 +1,11 @@
 class DemosController < ApplicationController
-  def untouchable
+  def artsale
   end
 
-  def slidepuzzle
+  def beetracker
+  end
+
+  def groovy
   end
 
   def imgbrowser
@@ -11,9 +14,15 @@ class DemosController < ApplicationController
   def openmrs
   end
 
-  def artsale
+  def slidepuzzle
   end
 
-  def groovy
+  def untouchable
+  end
+
+  def visualize
+  end
+
+  def yajm
   end
 end
