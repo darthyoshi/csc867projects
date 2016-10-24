@@ -4,33 +4,42 @@ Home:
 About:
   url: "/about"
   title: "About"
-Resume:
-  url: "/about/resume"
-  title: "Resume"
-Projects:
-  url: "/projects"
-  title: "Projects I've worked on"
+ArtSale:
+  url: "/artsale"
+  title: "ArtSale"
+BeeTracker:
+  url: "/beetracker"
+  title: "BeeTracker"
 Calendar:
   url: "/calendar"
   title: "A basic interactive calendar"
-Puzzle:
-  url: "/slidepuzzle"
-  title: "SlidePuzzle"
-Untouchable:
-  url: "/untouchable"
-  title: "Untouchable"
+GroovyGrubs:
+  url: "/groovygrubs"
+  title: "GroovyGrubs"
 ImageBrowser:
   url: "/imagebrowser"
   title: "A simple image browser"
 OpenMRS:
   url: "/openmrs"
   title: "OpenMRS DSS module"
-GroovyGrubs:
-  url: "/groovygrubs"
-  title: "GroovyGrubs"
-ArtSale:
-  url: "/artsale"
-  title: "ArtSale"
+Projects:
+  url: "/projects"
+  title: "Projects I've worked on"
+Puzzle:
+  url: "/slidepuzzle"
+  title: "SlidePuzzle"
 Quickshow:
   url: "/quickshow"
   title: "Quickshow"
+Resume:
+  url: "/about/resume"
+  title: "Resume"
+Untouchable:
+  url: "/untouchable"
+  title: "Untouchable"
+Visualize:
+  url: "/visualize"
+  title: "Visualize"
+YAJMinesweeper:
+  url: "/yajminesweeper"
+  title: "YAJMinesweeper"
