@@ -1,6 +1,6 @@
 Download demo:
 <ul>
-  <li>TODO <!-- <%= link_to "JAR", "https://github.com/darthyoshi/YAJMinesweeper/tree/master/dist" %> --></li>
+  <li>TODO <!-- <%= link_to "Linux", "https://github.com/darthyoshi/YAJMinesweeper/tree/master/dist" %> --></li>
 </ul>
 
 <ul class="nav nav-tabs">
@@ -11,19 +11,73 @@ Download demo:
 <div class="tab-content">
   <div id="over" class="tab-pane fade in active">
     <p>
-      TODO description
+      visualize was a group term project for a biomedical imaging and analysis course. The goal of the project
+      was to develop a biomedical image analysis system using public software libraries. Our group consisted of
+      10 members, broken down into the following teams:
+    </p>
+
+    Segmentation/Registration
+    <ul>
+      <li><%= mail_to "mr.burmark@gmail.com", "Jason Burmark" %> (group leader)</li>
+      <li><%= mail_to "moaanalmehin@gmail.com", "Moaan Ahmed" %></li>
+      <li><%= mail_to "root@davidkushner.me", "David Kushner" %></li>
+      <li><%= mail_to "michael.david.simon12357@gmail.com", "Michael Simon" %></li>
+    </ul>
+
+    Quantification/Visualization
+    <ul>
+      <li><%= link_to "Kay Choi (myself)", "/about#me" %> (group leader)</li>
+      <li><%= mail_to "echu10@gmail.com", "Eric Chu" %></li>
+      <li><%= mail_to "felix.ramirezjr@gmail.com", "Felix Ramirez" %></li>
+    </ul>
+
+    UI/Integration
+    <ul>
+      <li><%= mail_to "justinacotter@gmail.com", "Justina Cotter" %> (group leader)</li>
+      <li><%= mail_to "otherwhitefrank@gmail.com", "Frank Dye" %></li>
+      <li><%= mail_to "jsanch165@gmail.com", "Juan Sanchez" %></li>
+    </ul>
+
+    <p>
+      visualize was built in C++ using the following frameworks:
+    </p>
+    <ul>
+      <li><%= link_to "ITK", "itk.org" %> - image processing</li>
+      <li><%= link_to "VTK", "vtk.org" %> - image visualization</li>
+      <li><%= link_to "Qt5", "qt.io" %> - UI</li>
+    </ul>
+    <p>
+      My individual final report for the project is available <%= link_to "here", "https://drive.google.com/open?id=0B8DtqFIE221kSzhPVHpOLWtRalk" %>.
     </p>
   </div>
 
   <div id="screens" class="tab-pane fade">
     <p>
       <h3>TODO screens</h3>
-<!--      Easy<br>
-      <%= image_tag("SlidePuzzle/easy.jpg") %><br>
-      Normal<br>
-      <%= image_tag("SlidePuzzle/normal.jpg") %><br>
-      Hard<br>
-      <%= image_tag("SlidePuzzle/hard.jpg") %><br>
--->    </p>
+    </p>
+<!--
+    <p>
+      <h3>Main screen</h3>
+      <%= image_tag("ImgBrowser/mainview.jpg") %><br>
+    </p>
+
+    <br>
+    <p>
+      <h3>Image view mode</h3>
+      <%= image_tag("ImgBrowser/imageview.jpg") %><br>
+    <p>
+
+    <br>
+    <p>
+      <h3>Calibration screen</h3>
+      <%= image_tag("ImgBrowser/calibview.jpg") %><br>
+    </p>
+
+    <br>
+    <p>
+      <h3>Debug mode</h3>
+      <%= image_tag("ImgBrowser/debugview.jpg") %><br>
+    </p>
+-->
   </div>
 </div>
