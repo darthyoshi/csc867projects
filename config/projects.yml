@@ -1,73 +1,85 @@
-"Computer Vision":
-  "https://github.com/darthyoshi/beetracker":
-    date: "Spring 2015 - Spring 2016"
-    projects:
-      BeeTracker:
-        url: "/beetracker"
-        description: "A program for tracking bees in video footage"
-  "https://github.com/darthyoshi/csc621-821-sp2015":
-    date: "Spring 2015"
-    projects:
-      Visualize:
-        url: "/visualize"
-        description: "A medical imaging system"
-Games:
-  "https://github.com/darthyoshi/YAJMinesweeper":
-    date: "Fall 2015"
-    projects:
-      YAJMinesweeper:
-        url: "/yajminesweeper"
-        description: "(Y)et (A)nother (J)ava Minesweeper game"
-  "https://github.com/darthyoshi/csc780-project-kchoi":
-    date: "Spring 2014"
-    projects:
-      Untouchable:
-        url: "/untouchable"
-        description: "An Android game"
-  "https://github.com/darthyoshi/su-13-project-slide-puzzle":
-    date: "Summer 2013"
-    projects:
-      SlidePuzzle:
-        url: "/slidepuzzle"
-        description: "A slide puzzle game done in Unity"
-Multimedia:
-  "https://github.com/darthyoshi/quickshow":
-    date: "Fall 2014"
-    projects:
-      Quickshow:
-        url: "/quickshow"
-        description: "A slide show player"
-  "private":
-    date: "Fall 2014"
-    projects:
-      ImageBrowser:
-        url: "/imagebrowser"
-        description: "A simple image browser"
-"Web":
-  "https://github.com/darthyoshi/csc867project":
-    date: "Fall 2013"
-    projects:
-      "Portfolio":
-        url: "/about#site"
-        description: "This site"
-      Calendar:
-        url: "/calendar"
-        description: "A basic interactive calendar"
-  "https://github.com/darthyoshi/csc-667-867-team-yak":
-    date: "Fall 2013"
-    projects:
-      ArtSale:
-        url: "/artsale"
-        description: "A website for buying and selling artwork"
-  "https://github.com/darthyoshi/sp2013-csc668-868-group1/tree/master/OpenMRSSubmissions":
-    date: "Spring 2013"
-    projects:
-      "OpenMRS DSS Module":
-        url: "/openmrs"
-        description: "A module for OpenMRS"
-  "https://github.com/darthyoshi/groovygrubs":
-    date: "Fall 2012"
-    projects:
-      GroovyGrubs:
-        url: "/groovygrubs"
-        description: "A website for sharing food recipes"
+computervision:
+  displayName:
+    "Computer Vision"
+  repos:
+    "https://github.com/darthyoshi/beetracker":
+      date: "Spring 2015 - Spring 2016"
+      projects:
+        BeeTracker:
+          url: "/beetracker"
+          description: "A program for tracking bees in video footage"
+    "https://github.com/darthyoshi/csc621-821-sp2015":
+      date: "Spring 2015"
+      projects:
+        Visualize:
+          url: "/visualize"
+          description: "A medical imaging system"
+games:
+  displayName:
+    Games
+  repos:
+    "https://github.com/darthyoshi/YAJMinesweeper":
+      date: "Fall 2015"
+      projects:
+        YAJMinesweeper:
+          url: "/yajminesweeper"
+          description: "(Y)et (A)nother (J)ava Minesweeper game"
+    "https://github.com/darthyoshi/csc780-project-kchoi":
+      date: "Spring 2014"
+      projects:
+        Untouchable:
+          url: "/untouchable"
+          description: "An Android game"
+    "https://github.com/darthyoshi/su-13-project-slide-puzzle":
+      date: "Summer 2013"
+      projects:
+        SlidePuzzle:
+          url: "/slidepuzzle"
+          description: "A slide puzzle game done in Unity"
+multimedia:
+  displayName:
+    Multimedia
+  repos:
+    "https://github.com/darthyoshi/quickshow":
+      date: "Fall 2014"
+      projects:
+        Quickshow:
+          url: "/quickshow"
+          description: "A slide show player"
+    "private":
+      date: "Fall 2014"
+      projects:
+        ImageBrowser:
+          url: "/imagebrowser"
+          description: "A simple image browser"
+web:
+  displayName:
+    Web
+  repos:
+    "https://github.com/darthyoshi/csc867project":
+      date: "Fall 2013"
+      projects:
+        "Portfolio":
+          url: "/about#site"
+          description: "This site"
+        Calendar:
+          url: "/calendar"
+          description: "A basic interactive calendar"
+    "https://github.com/darthyoshi/csc-667-867-team-yak":
+      date: "Fall 2013"
+      projects:
+        ArtSale:
+          url: "/artsale"
+          description: "A website for buying and selling artwork"
+    "https://github.com/darthyoshi/sp2013-csc668-868-group1/tree/master/OpenMRSSubmissions":
+      date: "Spring 2013"
+      projects:
+        "OpenMRS DSS Module":
+          url: "/openmrs"
+          description: "A module for OpenMRS"
+    "https://github.com/darthyoshi/groovygrubs":
+      date: "Fall 2012"
+      projects:
+        GroovyGrubs:
+          url: "/groovygrubs"
+          description: "A website for sharing food recipes"

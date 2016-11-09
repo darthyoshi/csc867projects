@@ -1,17 +1,17 @@
 <% categories = YAML.load(File.read(File.expand_path("config/projects.yml"))) %>
 
 <ul class="nav nav-tabs">
-  <% categories.each do |category, projects| %>
-  <li><a href="#<%= category %>" data-toggle="tab"><%= category %></a></li>
+  <% categories.each do |category, contents| %>
+  <li><a href="#<%= category %>" data-toggle="tab"><%= contents["displayName"] %></a></li>
   <% end %>
 </ul>
 
 <div class="tab-content">
-  <% categories.each do |category, repos| %>
-  <div id="<%= category %>" class="tab-pane fade<% if category == "Computer Vision" %> in active<% end %>">
-    <h2><%= category %></h2>
+  <% categories.each do |category, contents| %>
+  <div id="<%= category %>" class="tab-pane fade<% if category == "computervision" %> in active<% end %>">
+    <h2><%= contents["displayName"] %></h2>
 
-    <% repos.each do |repo, project| %>
+    <% contents["repos"].each do |repo, project| %>
     <h3>
       <%= project["date"] %>
       <small>(
