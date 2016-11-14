@@ -8,13 +8,38 @@ Download demo:
 <ul class="nav nav-tabs">
   <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
   <li><a href="#screens" data-toggle="tab"><h3>Screenshots</h3></a></li>
+  <li><a href="#videos" data-toggle="tab"><h3>Screencasts</h3></a></li>
 </ul>
 
 <div class="tab-content">
   <div id="over" class="tab-pane fade in active">
     <p>
-      BeeTracker was the Culminating Experience project for my Master's Degree. 
+      <i>BeeTracker</i> was the Culminating Experience project for my Master's Degree.
+      The project aimed to provide an easy-to-use automated bee tracking application
+      using computer vision. By analyzing recorded video footage of bee hives,
+      researchers can use <i>BeeTracker</i> to identify the movement of marked bees into
+      and out of hives, or identify instances of marked bees performing waggle dances
+      within the hive interior. By tracking these behaviors, researchers can identify
+      whether or not hives are exhibiting symptoms of <i><%= link_to "Apocephalus borealis", "https://en.wikipedia.org/wiki/Apocephalus_borealis" %></i>
+      infection, a hypothesized contributor to <%= link_to "CCD", "https://en.wikipedia.org/wiki/Colony_collapse_disorder" %>.
     </p>
+
+    <p>
+      <i>BeeTracker</i> was built in Java using the <%= link_to "Processing", "http://processing.org" %>
+      library, with additional functionality provided by
+      Andreas Schlegel's <%= link_to "ControlP5", "http://www.sojamo.de/libraries/controlP5/" %>
+      UI library, Julien Gachadot's
+      <%= link_to "BlobDetection", "http://www.v3ga.net/processing/BlobDetection/" %> library, and
+      Darius Morawiec's <%= link_to "$1 Unistroke Recognizer", "https://github.com/nok/onedollar-unistroke-recognizer" %> library.
+    </p>
+
+    <p>
+      Please be aware that the Processing video library depends on the gstreamer library.
+      While gstreamer will often be already installed on Linux systems as a dependency for other
+      applications, this is generally not the case for Windows or OS X, necessitating the inclusion
+      of the required shared library files, and hence the larger downloadable size.
+    </p>
+
     <p>
       The written report for the project can be found <%= link_to "here", "https://drive.google.com/open?id=0B8DtqFIE221kZl9NaWNvYl9UTms" %>.
     </p>
@@ -37,6 +62,25 @@ Download demo:
       <h3>Results screens<h3>
       <%= image_tag("BeeTracker/summary1.jpg") %><br>
       <%= image_tag("BeeTracker/summary1.jpg") %>
+    </p>
+  </div>
+
+  <div id="videos" class="tab-pane fade">
+    <p>
+      The following videos provide examples of the bee movements tracked by BeeTracker,
+      as well as various program functionality.
+    </p>
+    <p>
+      <h3>Ingress/egress</h3>
+      <%= video_tag(["https://drive.google.com/open?id=0B8DtqFIE221kbGZheDc0eHFIeU0", "https://drive.google.com/open?id=0B8DtqFIE221kN0pFQ19hbUxTOWs"], controls: true, autobuffer: true, size: "640x480", preload: true) do %>
+        If you are unable to view the screencast, it may be downloaded <%= link_to "here", "https://drive.google.com/open?id=0B8DtqFIE221kN0pFQ19hbUxTOWs" %>.
+      <% end %>
+    </p>
+    <p>
+      <h3>Waggle dance</h3>
+      <%= video_tag(["https://drive.google.com/open?id=0B8DtqFIE221kRGtkcDNMbkhXZ00", "https://drive.google.com/open?id=0B8DtqFIE221kcURaYkVFbG1MNlU"], controls: true, autobuffer: true, size: "640x480", preload: true) do %>
+      If you are unable to view the screencast, it may be downloaded <%= link_to "here", "https://drive.google.com/open?id=0B8DtqFIE221kcURaYkVFbG1MNlU" %>.
+      <% end %>
     </p>
   </div>
 </div>
