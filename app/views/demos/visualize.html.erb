@@ -1,8 +1,3 @@
-Download demo:
-<ul>
-  <li>TODO <!-- <%= link_to "Linux", "https://github.com/darthyoshi/YAJMinesweeper/tree/master/dist" %> --></li>
-</ul>
-
 <ul class="nav nav-tabs">
   <li><a href="#over" data-toggle="tab"><h3>Overview</h3></a></li>
   <li><a href="#screens" data-toggle="tab"><h3>Screenshots</h3></a></li>
@@ -11,9 +6,9 @@ Download demo:
 <div class="tab-content">
   <div id="over" class="tab-pane fade in active">
     <p>
-      visualize was a group term project for a biomedical imaging and analysis course. The goal of the project
-      was to develop a biomedical image analysis system using public software libraries. Our group consisted of
-      10 members, broken down into the following teams:
+      <i>Visualize</i> was a group term project for a biomedical imaging and analysis course.
+      The goal of the project was to develop a biomedical image analysis system using public
+      software libraries. Our group consisted of 10 members, broken down into the following teams:
     </p>
 
     Segmentation/Registration
@@ -39,45 +34,25 @@ Download demo:
     </ul>
 
     <p>
-      visualize was built in C++ using the following frameworks:
-    </p>
-    <ul>
-      <li><%= link_to "ITK", "itk.org" %> - image processing</li>
-      <li><%= link_to "VTK", "vtk.org" %> - image visualization</li>
-      <li><%= link_to "Qt5", "qt.io" %> - UI</li>
-    </ul>
-    <p>
-      My individual final report for the project is available <%= link_to "here", "https://drive.google.com/open?id=0B8DtqFIE221kSzhPVHpOLWtRalk" %>.
+      <i>Visualize</i> is able to identify the differences between two DICOM images, for instance
+      to allow medical professionals to more easily identify changes in an organ over time.
+      <i>Visualize</i> was built in C++ using the following frameworks:
+
+      <ul>
+        <li><%= link_to "ITK", "itk.org" %> - image processing</li>
+        <li><%= link_to "VTK", "vtk.org" %> - image visualization</li>
+        <li><%= link_to "Qt5", "qt.io" %> - UI</li>
+      </ul>
+
+      My individual final report for the project is available <%= link_to "here", "https://drive.google.com/open?id=0B8DtqFIE221kSzhPVHpOLWtRalk" %>. To demo,
+      please build from source according to the <%= link_to "repository readme",
+      "https://github.com/darthyoshi/csc621-821-sp2015/blob/feature/qt_integration/README.md" %>.
     </p>
   </div>
 
   <div id="screens" class="tab-pane fade">
-    <p>
-      <h3>TODO screens</h3>
-    </p>
-<!--
-    <p>
-      <h3>Main screen</h3>
-      <%= image_tag("ImgBrowser/mainview.jpg") %><br>
-    </p>
-
-    <br>
-    <p>
-      <h3>Image view mode</h3>
-      <%= image_tag("ImgBrowser/imageview.jpg") %><br>
-    <p>
-
-    <br>
-    <p>
-      <h3>Calibration screen</h3>
-      <%= image_tag("ImgBrowser/calibview.jpg") %><br>
-    </p>
-
-    <br>
-    <p>
-      <h3>Debug mode</h3>
-      <%= image_tag("ImgBrowser/debugview.jpg") %><br>
-    </p>
--->
+    <%= image_tag("Visualize/load.jpg") %><br>
+    <%= image_tag("Visualize/register.jpg") %><br>
+    <%= image_tag("Visualize/segment.jpg") %>
   </div>
 </div>
